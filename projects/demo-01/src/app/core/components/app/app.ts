@@ -1,13 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Sample } from "../sample/sample";
 
 @Component({
   selector: 'ind-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Sample],
   template: `
     <h1>Hello, {{ title() }}</h1>
 
     <router-outlet />
+    <ind-sample />
   `,
   styles: [],
 })
