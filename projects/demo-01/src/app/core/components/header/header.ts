@@ -4,10 +4,12 @@ import { Separator } from '../separator/separator';
 import { Search } from "../search/search";
 import { LogoCoders } from '../logo-coders/logo-coders';
 import { SearchRef } from '../search/search ref';
+import { Toggle } from '../toggle/toggle';
+import { User } from '../user/user';
 
 @Component({
   selector: 'ind-header',
-  imports: [MenuMobile, Separator, Search, LogoCoders, SearchRef],
+  imports: [MenuMobile, Separator, Search, LogoCoders, SearchRef, Toggle, User],
   template: `
   <header>
       <div class="left-side">
@@ -17,7 +19,11 @@ import { SearchRef } from '../search/search ref';
         <h1 class="title">{{ title() }}</h1>
       </hgroup>
       <div class="right-side">
-        <ind-menu-mobile class="desktop-only" />
+        <div class="icons">
+          <ind-user/>
+          <ind-menu-mobile class="desktop-only" />
+        </div>
+        <ind-toggle />
       </div>
       <div class="bottom-row">
         <p>{{ subtitle() }}</p>
