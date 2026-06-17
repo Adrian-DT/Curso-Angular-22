@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MenuMobile } from '../menu-mobile/menu-mobile';
 import { Separator } from '../separator/separator';
 import { Search } from "../search/search";
@@ -21,7 +21,7 @@ import { User } from '../user/user';
       <div class="right-side">
         <div class="icons">
           <ind-user/>
-          <ind-menu-mobile class="desktop-only" />
+          <ind-menu-mobile class="mobile-only" />
         </div>
         <ind-toggle />
       </div>
@@ -37,7 +37,7 @@ import { User } from '../user/user';
     <ind-separator />
   `,
   styles: `
-        :host {
+      :host {
         margin-bottom: 1.5rem;
         min-height: 15vh;
         color: var(--color-primary-hot);
@@ -110,6 +110,15 @@ import { User } from '../user/user';
   `,
 })
 export class Header {
-  protected readonly title = signal('Curso de Angular 22');
-  protected readonly subtitle = signal('Aprende a desarrollar aplicaciones web con Angular');
+  // Indicamos que será un input de tipo string, recibiremos el valor del template de app, incorporando el valor en el componente
+  // Si indicamos input.required, nos pedirá que se lo pasemos por el componente padre, en este caso app, si no lo hacemos, nos dará error en consola.
+  // A los input le podemos pasar un objeto, indicando el alías para el componente padre
+  public readonly title = input.required<string>({
+    // eslint-disable-next-line @angular-eslint/no-input-rename
+    alias: 'headerTitle',
+  });
+  // Indicamos que será un input de tipo string, recibiremos el valor del template de app, incorporando el valor en el componente
+  public readonly subtitle = input<string>();
+
+
 }

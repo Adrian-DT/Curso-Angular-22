@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { MENU_OPTIONS } from '../../../app.routes';
+import { Component, input } from '@angular/core';
 import { MenuOption } from '../../types/menu-option';
 
 @Component({
@@ -38,7 +37,7 @@ import { MenuOption } from '../../types/menu-option';
 export class Menu {
 
   // Propiedad para coger las rutas disponibles de la constante del app.routes
-  protected readonly options = signal<MenuOption[]>(MENU_OPTIONS);
+  public readonly options = input.required<MenuOption[]>();
 
 
 }
