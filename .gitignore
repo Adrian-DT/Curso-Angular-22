@@ -1,8 +1,11 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+<<<<<<< HEAD
 .angular/
 *.pptx
 
+=======
+>>>>>>> interno-ng22/main
 # Compiled output
 /dist
 /tmp
@@ -29,6 +32,10 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+<<<<<<< HEAD
+=======
+!.vscode/mcp.json
+>>>>>>> interno-ng22/main
 .history/*
 
 # Miscellaneous
@@ -39,11 +46,16 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+<<<<<<< HEAD
+=======
+__screenshots__/
+>>>>>>> interno-ng22/main
 
 # System files
 .DS_Store
 Thumbs.db
 
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -185,3 +197,9 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+=======
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+>>>>>>> interno-ng22/main
