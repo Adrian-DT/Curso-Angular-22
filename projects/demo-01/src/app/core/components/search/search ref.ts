@@ -1,21 +1,23 @@
-import { Component, effect, ElementRef, OnInit, signal, viewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'ind-search',
+  selector: 'ind-search-ref',
   imports: [FormsModule],
   template: `
 
     <!-- Forma de hacer manualmente, pasar valor por input y modificando la signal -->
     <!-- [value]="searchQuery()" (input)="searchQuery.set($event.target.value)" /> -->
-    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" #searchInput />
-    <span>{{ searchQuery() ? 'Buscando ' + searchQuery() : 'Esperando' }}</span>
-    <button (click)="reset()">
+
+    <!-- Podemos manipular el componente directamente con elementos referencias (#searchInput) -->
+    <input type="text" placeholder="Search..." [(ngModel)]="searchInput" #searchInput />
+    <span>{{ searchInput.value ? 'Buscando ' + searchInput.value : 'Esperando' }}</span>
+    <button (click)="searchInput.value=''; searchInput.focus()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 640 640"
-        [attr.width]="size()"
-        [attr.height]="size()"
+        [attr.width]="'1rem'"
+        [attr.height]="'1rem'"
         fill="currentColor"
       >
         <path
@@ -55,26 +57,7 @@ import { FormsModule } from '@angular/forms';
       }
     }`,
 })
-export class Search implements OnInit {
-  protected readonly searchQuery = signal<string>('');
-  protected readonly searchInput = viewChild<ElementRef<HTMLInputElement>>('searchInput');
-  protected readonly size = signal('1rem');
+export class SearchRef {
 
-  constructor() {
-    console.log('ref', this.searchInput());
 
-    // Funcion que se ejecuta cuando una signal de dentro del efecto cambia
-    effect(() => {
-      console.log('ref (Effect)', this.searchInput());
-    })
-  }
-
-  ngOnInit() {
-    console.log('ref (OnInit)', this.searchInput());
-  }
-
-  reset() {
-    this.searchQuery.set('');
-    this.searchInput()?.nativeElement.focus();
-  }
 }

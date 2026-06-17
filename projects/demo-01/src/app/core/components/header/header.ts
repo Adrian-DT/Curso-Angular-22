@@ -3,10 +3,11 @@ import { MenuMobile } from '../menu-mobile/menu-mobile';
 import { Separator } from '../separator/separator';
 import { Search } from "../search/search";
 import { LogoCoders } from '../logo-coders/logo-coders';
+import { SearchRef } from '../search/search ref';
 
 @Component({
   selector: 'ind-header',
-  imports: [MenuMobile, Separator, Search, LogoCoders],
+  imports: [MenuMobile, Separator, Search, LogoCoders, SearchRef],
   template: `
   <header>
       <div class="left-side">
@@ -21,6 +22,7 @@ import { LogoCoders } from '../logo-coders/logo-coders';
       <div class="bottom-row">
         <p>{{ subtitle() }}</p>
         <ind-search />
+        <ind-search-ref/>
         <div class="desktop-only">
           <ng-content></ng-content>
         </div>
