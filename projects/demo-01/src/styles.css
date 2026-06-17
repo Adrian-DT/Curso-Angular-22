@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
   --electric-violet: oklch(53.18% 0.28 296.97);
   --french-violet: oklch(47.66% 0.246 305.88);
@@ -75,7 +74,7 @@
 }
 
 :root {
-  --fontfamily:
+  --font-family:
     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
@@ -101,9 +100,13 @@ html:has(#theme-toggle:checked) {
   color-scheme: dark;
 }
 
-html:has(#theme-toggle:indeterminate) {
+html:has(#theme-toggle:not(:checked)) {
   color-scheme: light;
 }
+
+/* html:has(#theme-toggle:not(:checked)) {
+  color-scheme: light;
+} */
 
 body {
   margin: 0;
