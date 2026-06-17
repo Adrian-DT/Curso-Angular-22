@@ -24,7 +24,7 @@ export class Sample {
   constructor() {
 
     setTimeout(() => {
-      this.title.set('Sample modificado');
+      this.title.set('Sample modificado.');
     }, 2000);
 
     setTimeout(() => {
