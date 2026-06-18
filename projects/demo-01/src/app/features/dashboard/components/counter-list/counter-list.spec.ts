@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CounterList } from './counter-list';
+import { By } from '@angular/platform-browser';
+import { Counter } from '../counter/counter';
 
 describe('CounterList', () => {
   let component: CounterList;
@@ -19,4 +21,32 @@ describe('CounterList', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should update totalValue and totalClicks when counterChange is called', () => {
+    const initialTotalValue = component['totalValue']();
+    const initialTotalClicks = component['totalClicks']();
+
+    const incrementValue = 5;
+    // component['counterChange'](incrementValue);
+
+    const indCounterDebugElements = fixture.debugElement.queryAll(By.directive(Counter));
+    expect(indCounterDebugElements.length).toBe(2);
+    indCounterDebugElements[0].triggerEventHandler('countEvent', incrementValue);
+    fixture.detectChanges();
+
+    expect(component['totalValue']()).toBe(initialTotalValue + incrementValue);
+    expect(component['totalClicks']()).toBe(initialTotalClicks + 1);
+  });
+
+  it('should update totalValue and totalClicks when counterReset is called', () => {
+    const initialTotalValue = component['totalValue']();
+    const initialTotalClicks = component['totalClicks']();
+
+    const resetValue = 3;
+    component['counterReset'](resetValue);
+
+    expect(component['totalValue']()).toBe(initialTotalValue - resetValue);
+    expect(component['totalClicks']()).toBe(initialTotalClicks + 1);
+  });
+
 });

@@ -1,4 +1,4 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, computed, input, output, signal } from '@angular/core';
 
 const LIMIT = 5;
 
@@ -7,11 +7,11 @@ const LIMIT = 5;
   imports: [],
   template: `
 
-  @if (value() >= limit() || value() <= -limit()) {
-    <p class="limited-reached">
-      Has alcanzado el limite actual {{ value() }}.
-    </p>
-  } @else if (value() <= -limit()){
+  @if (id() !== undefined) {
+    <p> ID: {{ id() }}</p>
+  }
+
+  @if (isLimitReached()) {
     <p class="limited-reached">
       Has alcanzado el limite actual {{ value() }}.
     </p>
@@ -57,6 +57,8 @@ const LIMIT = 5;
 export class Counter {
   protected readonly value = signal(0);
   protected readonly limit = signal(LIMIT);
+  // Una propiedad computada es una propiedad que se calcula en función de otras propiedades, en este caso, se calcula si el valor actual es mayor o igual al limite o menor o igual al limite negativo.
+  protected readonly isLimitReached = computed(() => this.value() >= this.limit() || this.value() <= -this.limit());
 
   // Declaración de un evento de salida que emitirá un valor, gracias al decorador @Output,
   // esto nos permite hacer uso de el en el componente padre, en este caso CounterList
@@ -64,9 +66,19 @@ export class Counter {
   // Manera simplificada de hacer algo similar a lo anterior, sin usar decorador
   protected readonly countEvent = output<number>();
 
+  // Output para resetear el valor del contador total
+  protected readonly resetEvent = output<number>();
+
+
+  // Un input tiene la capacidad de transformar el valor que recibe, en este caso lo transformamos a mayúsculas, y lo guardamos en la propiedad id.
+  // protected readonly id = input({transform: (value: string) => value.toUpperCase()});
+  readonly id = input<number>();
+
+
 
   changeValue(value: number) {
     if (value === 0) {
+      this.resetEvent.emit(this.value());
       this.value.set(0);
     } else {
       this.value.update((currentValue) => currentValue + value);
