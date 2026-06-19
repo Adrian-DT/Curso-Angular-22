@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Note 1",
+    "content": "This is the content of note 1.",
+    "author": "John Doe",
+    "isImportant": true
+  },
+  {
+    "id": "2",
+    "title": "Note 2",
+    "content": "This is the content of note 2.",
+    "author": "Jane Smith",
+    "isImportant": false
+  },
+  {
+    "id": "3",
+    "title": "Note 3",
+    "content": "This is the content of note 3.",
+    "author": "Alice Johnson",
+    "isImportant": true
+  }
+]
