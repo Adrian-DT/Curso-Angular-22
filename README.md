@@ -17,29 +17,29 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ## Temario
 
-- Introducción a Angular y preparación del entorno 
-  - ¿Qué es Angular y qué resuelve? 
-  - Angular: fundamentos clave 
-  - Angular vs otros frameworks 
-  - Preparar el entorno 
-  - Crear el primer proyecto Angular 
-- Componentes en profundidad 
-  - Declaración de Componentes y Standalone Components
-  - Comunicación entre componentes con @Input y @Output 
-  - Ciclo de vida del componente 
-  - Estilos: encapsulados y globales 
+- `Introducción a Angular y preparación del entorno `
+  - `¿Qué es Angular y qué resuelve? `
+  - `Angular: fundamentos clave`
+  - `Angular vs otros frameworks` 
+  - `Preparar el entorno` 
+  - `Crear el primer proyecto Angular` 
+- `Componentes en profundidad` 
+  - `Declaración de Componentes y Standalone Components`
+  - `Comunicación entre componentes con @Input y @Output` 
+  - `Ciclo de vida del componente` 
+  - `Estilos: encapsulados y globales` 
 - Templates, directivas y pipes 
-  - Binding de datos en plantillas 
-  - Directivas estructurales
-  - Directivas de atributo 
-  - Pipes integrados 
-  - Creación de pipes personalizados 
+  - `Binding de datos en plantillas` 
+  - `Directivas estructurales`
+  - `Directivas de atributo` 
+  - `Pipes integrados` 
+  - Creación de pipes personalizados
 - Enrutamiento con provideRouter 
-  - Fundamentos del routing en Angular 20 
-  - Configuración de rutas con provideRouter y Route 
-  - Navegación entre vistas 
-  - Parámetros de ruta y query params 
-  - Lazy loading moderno 
+  - `Fundamentos del routing en Angular 20` 
+  - `Configuración de rutas con provideRouter y Route` 
+  - `Navegación entre vistas` 
+  - `Parámetros de ruta y query params` 
+  - `Lazy loading moderno `
   - Guards básicos 
   - Caso práctico: aplicación de un restaurante 
 - Servicios e inyección de dependencias
@@ -51,9 +51,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Interceptors HTTP para manejo global de peticiones y errores 
   - Lazy services y carga perezosa de servicios 
 - Formularios template-driven 
-  - Estructura básica de formularios template-driven 
-  - Binding y sincronización con ngModel 
-  - Validaciones básicas en formularios template-driven 
+  - `Estructura básica de formularios template-driven` 
+  - `Binding y sincronización con ngModel` 
+  - `Validaciones básicas en formularios template-driven` 
   - Mostrar mensajes de error
   - Formularios anidados simples 
 - Formularios reactivos 
@@ -63,10 +63,10 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Validadores personalizados 
   - Validación de formularios complejos 
 - Signals y estado reactivo 
-  - Introducción a Signals 
-  - API básica de Signals 
-  - Estado local reactivo sin necesidad de Observables 
-  - Uso de Signals en templates Angular 
+  - `Introducción a Signals` 
+  - `API básica de Signals` 
+  - `Estado local reactivo sin necesidad de Observables` 
+  - `Uso de Signals en templates Angular` 
   - Diferencias entre Signals y RxJS
   - Integración y coexistencia entre Signals y RxJS
 - Comunicación avanzada y manejo de estado 
@@ -77,16 +77,16 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Introducción a estado compartido simple sin NgRx 
   - Conceptos de gestión de estado reactivo a mayor escala (sin librerías externas) 
 - Testing de componentes y servicios 
-  - Importancia de testear en Angular
-  - Configuración del entorno de testing 
-  - Pruebas de componentes 
+  - `Importancia de testear en Angular`
+  - `Configuración del entorno de testing` 
+  - `Pruebas de componentes` 
   - Pruebas de servicios 
   - Pruebas de formularios 
-  - Introducción a pruebas end-to-end (E2E) con Cypress o Playwright 
+  - `Introducción a pruebas end-to-end (E2E) con Cypress o Playwright` 
 - Arquitectura escalable y buenas prácticas 
-  - Organización por features (Feature Folders) 
-  - Reutilización de componentes y servicios 
-  - Nomenclatura, rutas y estructura limpia 
+  - `Organización por features (Feature Folders)` 
+  - `Reutilización de componentes y servicios` 
+  - `Nomenclatura, rutas y estructura limpia`
   - Introducción a NgModules 
   - Migración y coexistencia entre NgModules y Standalone Components
   - Migración y coexistencia entre NgModules y Standalone Components
@@ -252,7 +252,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Test de inputs y outputs. 
 
 - Signal model()
-  - Componente 🧿Check. Input y Output.Design System CheckBox
+  - Componente 🧿Check. Input y Output. Design System CheckBox
   - Componente 🧿Terms. Input y Output. Comunicación entre componentes
   - Uso de model en esta situación
 
@@ -265,57 +265,44 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Navegación. Componente menu. @for
   - SPA: RouterLink y RouterLinkActive
 - Rutas Lazy. Default import en las páginas
+- Comentado: guards, resolvers, rotas anidadas
 
-- Pipes. 
-  - DatePipe. Location "es"
+- Pipes
+  - DatePipe. Location "es". Usar por defecto: inyección de dependencias
 - Directivas. Directivas propias
   - Directivas de atributo: Stick
   - Directivas estructurales: introducción
 
-
 ### Día 5 (V-19).  Servicios. Providers e injectors. Formularios DD
 
-<!-- Extras y final del Dia 3 en versión anterior -->
+- Directivas estructurales: ejemplo
 
-<!-- - Directivas estructurales: ejemplo -->
-
-<!-- 
- - 🧿Modal y menu mobile: Inputs + Outputs. Comunicación indirecta entre componentes
-  (Podría ir después de rutas)
- -->
-
-<!-- 
 - Arquitectura de componentes
   - Componentes de contenedores vs de presentación.
   - Componentes inteligentes vs tontos.
 
-- Ejemplo: Tasks List
-  - Entidad Tasks. Modelo y mock de datos asíncrono.
-  - Componente Tasks-List. Lógica del estado
-  - Componente Tasks-Item. Input y Output (Eventos)
-  - Componente Tasks-Form. Output (Eventos) - Mock sin formulario
--->
 
-<!-- Dia 4 en versión anterior -->
+- Ejemplo: Notes List
+  - Entidad Notes. Modelo y mock de datos asíncrono.
+  - Componente Notes-List. Lógica del estado
+  - Componente Notes-Item. Input y Output (Eventos)
+  - Componente Notes-Form. Output (Eventos) 
+    - Forms Template Driven (TD)
+      - NgForm implícito, NgModel. Referencias locales
+      - Paso de ngForm al onSubmit: form.value; form.reset()
 
-<!-- 
-- Componente Tasks-Form. Output (Eventos)
-  - Forms Template Driven (TD)
-    - NgForm implícito, NgModel. Referencias locales
-    - viewChild(NgForm) y form.reset()
-    - viewChild(Form), ElementRef.nativeElement y acceso al DOM
-  - Signal Forms
+- [Descanso] 11:00 - 11:30
+
+<!-- Dia 4 en versión anterior - Antes del descanso
+
+- Signal Forms
 
 - Introducción a los servicios en Angular.
 - Servicios y Providers. DI (Dependency Injection)
   - Provider root v. provider en un componente / ruta
   - Ejemplo con un servicio simple: Time
   - Injector jerárquico. Servicios singleton y no singleton.
-
-- Solución de problemas en CSS con el grid RWD
--->
-
-- [Descanso] 11:00 - 11:30
+ -->
 
 <!-- 
 - Servicios y patrón Repository
@@ -344,6 +331,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - FormGroup, FormControl, FormBuilder
   - Binding desde el template 
  -->
+
 
 ### Día 6 (L-22). Servicios HTTP. Arquitectura ¿despliegue?
 
@@ -411,4 +399,11 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - Directivas propias
 - Interceptors y Guards
 - Testing
+
+ <!-- 
+ - 🧿Modal y menu mobile: Inputs + Outputs. Comunicación indirecta entre componentes
+  (Podría ir después de rutas)
+ -->
+
+
  -->
