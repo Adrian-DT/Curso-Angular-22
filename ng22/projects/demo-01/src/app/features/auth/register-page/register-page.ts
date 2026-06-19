@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   template: ` <p>register-page works!</p> `,
   styles: ``,
 })
-export class RegisterPage {}
+export default class RegisterPage {}

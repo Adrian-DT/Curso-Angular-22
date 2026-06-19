@@ -70,21 +70,21 @@ export const routes: Routes = [
       }
     ]
   },
-  // {
-  //   path: 'users',
-  //   children: [
-  //     {
-  //       path: 'login',
-  //       title: 'Users | Angular 22',
-  //       loadComponent: () => import('./features/auth/login-page').then((m) => m.default),
-  //     },
-  //     {
-  //       path: 'register',
-  //       title: 'Register | Angular 22',
-  //       loadComponent: () => import('./features/auth/register-page').then((m) => m.default),
-  //     },
-  //   ]
-  // },
+  {
+    path: 'users',
+    children: [
+      {
+        path: 'login',
+        title: 'Users | Angular 22',
+        loadComponent: () => import('./features/auth/login-page/login-page').then((m) => m.default),
+      },
+      {
+        path: 'register',
+        title: 'Register | Angular 22',
+        loadComponent: () => import('./features/auth/register-page/register-page').then((m) => m.default),
+      },
+    ]
+  },
   {
     path: 'about',
     title: 'About | Angular 22',

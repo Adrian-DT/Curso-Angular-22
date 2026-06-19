@@ -6,7 +6,8 @@ import { RouterLink } from "@angular/router";
   imports: [RouterLink],
   template: `
     <nav>
-      <a [routerLink]="['users', 'login']" id="menu-icon" (click)="toggleUser()">
+      <!-- En routerLink indicamos la ruta del link con el primer prámetro "/users" y con el segundo la ruta hija de users, llamada login -->
+      <a [routerLink]="['/users', 'login']" id="menu-icon" (click)="toggleUser()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"
