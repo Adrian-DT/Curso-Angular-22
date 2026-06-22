@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "username": "jdoe",
+      "email": "jdoe@email.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "username": "janedoe",
+      "email": "janedoe@email.com",
+      "password": "654321"
+    },
+    {
+      "id": "3",
+      "name": "Juan Pérez",
+      "username": "juanperez",
+      "email": "jp@email.com",
+      "password": "123456"
+    }
+  ],
+  "notes": [
+    {
+      "id": "3",
+      "title": "Task 3",
+      "content": "This is the content of Task 3.",
+      "author": "Alice Johnson",
+      "isImportant": true
+    },
+    {
+      "title": "aaa",
+      "content": "aaa",
+      "author": "aaa",
+      "isImportant": null,
+      "id": "WXQNyA_vS8U"
+    },
+    {
+      "title": "sss",
+      "content": "sss",
+      "author": "sssssssssss",
+      "isImportant": true,
+      "id": "w5bWJx6hHk0"
+    },
+    {
+      "title": "aaassss",
+      "content": "asasasas",
+      "author": "asasasasasas",
+      "isImportant": true,
+      "id": "nGeZUAx6qhw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
