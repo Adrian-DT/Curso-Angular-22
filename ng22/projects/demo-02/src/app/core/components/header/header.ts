@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { MenuMobile } from '../menu-mobile/menu-mobile';
 import { Separator } from '../separator/separator';
 import { LogoCoders } from '../logo-coders/logo-coders';
@@ -6,11 +6,17 @@ import { Search } from '../search/search';
 import { User } from '../user/user';
 import { Toggle } from '../toggle/toggle';
 import { SearchRef } from '../search/search.ref';
+import { TasksStoreRx } from '../../../features/tasks/services/tasks-store-rx';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'ind-header',
-  imports: [MenuMobile, Separator, LogoCoders, Search, SearchRef, User, Toggle],
+  imports: [MenuMobile, Separator, LogoCoders, Search, SearchRef, User, Toggle, AsyncPipe],
   template: `
+    <!-- Podemos declarar variables en la vista utilizando la sintaxis @let, que nos permite crear una variable local que puede
+    ser utilizada dentro del bloque de código donde se declara. En este caso, estamos declarando la variable tasks y asignándole el valor
+    del Observable tasks$ del store, utilizando el AsyncPipe para suscribirnos automáticamente al Observable y obtener su valor actual. -->
+    @let tasks = taskStore.tasks$ | async;
     <header>
       <div class="left-side">
         <ind-logo-coders />
@@ -24,6 +30,9 @@ import { SearchRef } from '../search/search.ref';
           <ind-user />
         </div>
         <ind-toggle />
+        <!-- Indicamos el número de tareas obtenidas mediante el back, injectado en el componente y utilizando el AsyncPipe para no necesitar subscribirme en el componente,
+        lo obtenemos de la variable tasks definida en la parte de la vista más arriba -->
+        <p>Tasks: {{ tasks?.length || 0 }}</p>
       </div>
       <div class="bottom-row">
         <p>{{ subtitle() }}</p>
@@ -96,8 +105,6 @@ import { SearchRef } from '../search/search.ref';
           display: none;
         }
       }
-
-
     `,
     `
       /*
@@ -128,10 +135,22 @@ import { SearchRef } from '../search/search.ref';
   ],
 })
 export class Header {
+  readonly taskStore = inject(TasksStoreRx);
+
+  readonly tasksLength = signal(0);
+
   readonly title = input.required<string>({
     // eslint-disable-next-line @angular-eslint/no-input-rename
     alias: 'headerTitle',
   });
   readonly subtitle = input<string>();
 
+  constructor() {
+    // Nos suscribimos al Observable tasks$ del store para recibir actualizaciones en tiempo real del número de tareas.
+    this.taskStore.tasks$.subscribe({
+      next: (tasks) => {
+        this.tasksLength.set(tasks.length);
+      },
+    });
+  }
 }

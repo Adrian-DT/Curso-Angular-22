@@ -52,5 +52,28 @@
       "id": "nGeZUAx6qhw"
     }
   ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Task 1",
+      "content": "This is the content of Task 1.",
+      "author": "John Doe",
+      "isImportant": true
+    },
+    {
+      "id": "3",
+      "title": "Task 3",
+      "content": "This is the content of Task 3.",
+      "author": "Alice Johnson",
+      "isImportant": true
+    },
+    {
+      "title": "Ir a comprar",
+      "content": "Pepino, cebolla, lechuga, tomate, patata, jabón",
+      "author": "Yo",
+      "isImportant": true,
+      "id": "CbV2f38l8N0"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

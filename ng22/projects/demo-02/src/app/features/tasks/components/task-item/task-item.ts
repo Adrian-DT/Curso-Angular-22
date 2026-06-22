@@ -1,6 +1,7 @@
-import { Component, input, output, signal } from '@angular/core';
-import { Task } from '../../entities/task';
+import { Component, inject, input, signal } from '@angular/core';
+import { Task } from '../../model/task';
 import { Card } from '../../../../core/components/card/card';
+import { TasksStoreRx } from '../../services/tasks-store-rx';
 
 @Component({
   selector: 'ind-task-item',
@@ -14,13 +15,13 @@ import { Card } from '../../../../core/components/card/card';
           type="checkbox"
           [checked]="task().isImportant"
           [disabled]="!isEdition()"
-          (change)="changeEmit()"
+          (change)="changeTask()"
         />
         Important
       </label>
       <div class="buttons">
         <button (click)="isEdition.set(true)">Edit</button>
-        <button (click)="deleteEmit()">Delete</button>
+        <button (click)="deleteTask()">Delete</button>
       </div>
     </ind-card>
   `,
@@ -36,23 +37,20 @@ import { Card } from '../../../../core/components/card/card';
   `,
 })
 export class TaskItem {
+  protected readonly taskStore = inject(TasksStoreRx);
+
   readonly task = input.required<Task>();
-  // protected readonly deleteEvent = output<Task['id']>();
-  protected readonly deleteEvent = output<void>();
-  protected readonly changeEvent = output<Task>();
+
   protected readonly isEdition = signal<boolean>(false);
 
-  deleteEmit() {
-    this.deleteEvent.emit();
+  deleteTask() {
+    this.taskStore.delete(this.task().id);
   }
 
-  changeEmit() {
-    const updatedTask: Task = {
+  changeTask() {
+    this.taskStore.update({
       ...this.task(),
       isImportant: !this.task().isImportant,
-    };
-
-    this.changeEvent.emit(updatedTask);
-    this.isEdition.set(false);
+    });
   }
 }

@@ -1,11 +1,17 @@
-import { DestroyRef, inject, Service } from '@angular/core';
+import { DestroyRef, inject, Service, signal } from '@angular/core';
 import { Task } from '../model/task';
-import { BehaviorSubject, delay } from 'rxjs';
 import { ApiRepo } from './api-repo';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { delay } from 'rxjs';
+
+interface TasksStore {
+  tasks: Task[];
+  isLoading: boolean;
+  error: Error | null;
+}
 
 @Service()
-export class TasksStoreRx {
+export class TasksStoreSignal {
   // Inyectamos el repositorio de API para interactuar con el backend o la fuente de datos.
   readonly #repo = inject(ApiRepo);
 
@@ -13,10 +19,14 @@ export class TasksStoreRx {
   // lo que nos permite cancelar automáticamente las suscripciones cuando el componente se destruye, evitando así posibles fugas de memoria.
   readonly #destroyRef = inject(DestroyRef);
 
-  // Con BehaivorSubject, te permite obtener siempre el último valor emitido.
-  readonly #tasks: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
+  // Con signal, te permite obtener siempre el último valor emitido.
+  readonly #tasks = signal<TasksStore>({
+    tasks: [],
+    error: null,
+    isLoading: false,
+  });
   // Exponemos el Observable de tareas para que los componentes puedan suscribirse a él y recibir actualizaciones en tiempo real.
-  readonly tasks$ = this.#tasks.asObservable();
+  readonly tasks$ = this.#tasks.asReadonly();
 
   readonly #mockDelay = 500;
 
@@ -31,32 +41,16 @@ export class TasksStoreRx {
       .pipe(takeUntilDestroyed(this.#destroyRef)) // Utilizamos takeUntilDestroyed para cancelar la suscripción automáticamente cuando el componente se destruya.
       .subscribe({
         next: (tasks) => {
-          this.#tasks.next(tasks);
+          this.#tasks.set({ tasks, error: null, isLoading: false });
         },
         // En caso de error, actualizamos el BehaviorSubject con un array vacío para que los componentes suscritos reciban una lista vacía de tareas,
         // y también podemos manejar el error de otras formas (mostrar un mensaje de error, etc.).
         error: (err) => {
           console.error('Error fetching tasks:', err);
-          this.#tasks.error(err);
+          this.#tasks.set({ tasks: [], error: err, isLoading: false });
         },
       });
-    // return this.tasks$.pipe(delay(this.#mockDelay));
   }
-
-  // // El método getById no es necesario para el funcionamiento del componente TasksList, ya que este componente se encarga de mostrar una lista de tareas y no necesita obtener una tarea específica por su ID. Sin embargo, si en algún momento necesitas implementar la funcionalidad de obtener una tarea por su ID, podrías hacerlo utilizando el método getById del repositorio y suscribiéndote a él para manejar la respuesta.
-  // getById(id: Task['id']) {
-  //   // Al llamar al método getById del repositorio, nos suscribimos al Observable que devuelve para obtener la tarea específica por su ID.
-  //   this.#repo
-  //     .getById(id)
-  //     .pipe(delay(this.#mockDelay))
-  //     .subscribe({
-  //       next: (task) => {
-  //         const currentTasks = this.#tasks.getValue();
-  //         const updatedTasks = currentTasks.map((t) => (t.id === task.id ? task : t));
-  //         this.#tasks.next(updatedTasks);
-  //       },
-  //     });
-  // }
 
   // El método add se encarga de añadir una nueva tarea a la lista de tareas.
   // Al llamar al método add del repositorio, nos suscribimos al Observable
@@ -73,8 +67,8 @@ export class TasksStoreRx {
         next: (task) => {
           // Para añadir la nueva tarea al BehaviorSubject, obtenemos el valor actual de las tareas utilizando getValue(),
           // añadimos la nueva tarea al array y luego emitimos el nuevo array actualizado con next().
-          const currentTasks = this.#tasks.getValue();
-          this.#tasks.next([...currentTasks, task]);
+          const currentTasks = this.#tasks();
+          this.#tasks.set({ tasks: [...currentTasks.tasks, task], error: null, isLoading: false });
         },
       });
   }
@@ -86,9 +80,9 @@ export class TasksStoreRx {
       .pipe(takeUntilDestroyed(this.#destroyRef)) // Utilizamos takeUntilDestroyed para cancelar la suscripción automáticamente cuando el componente se destruya.
       .subscribe({
         next: () => {
-          const currentTasks = this.#tasks.getValue();
-          const updatedTasks = currentTasks.filter((task) => task.id !== id);
-          this.#tasks.next(updatedTasks);
+          const currentTasks = this.#tasks();
+          const updatedTasks = currentTasks.tasks.filter((task) => task.id !== id);
+          this.#tasks.set({ tasks: updatedTasks, error: null, isLoading: false });
         },
         error: (err) => {
           console.error(`Error deleting task with id ${id}:`, err);
@@ -104,9 +98,9 @@ export class TasksStoreRx {
       .pipe(takeUntilDestroyed(this.#destroyRef)) // Utilizamos takeUntilDestroyed para cancelar la suscripción automáticamente cuando el componente se destruya.
       .subscribe({
         next: (task) => {
-          const currentTasks = this.#tasks.getValue();
-          const updatedTasks = currentTasks.map((t) => (t.id === task.id ? task : t));
-          this.#tasks.next(updatedTasks);
+          const currentTasks = this.#tasks();
+          const updatedTasks = currentTasks.tasks.map((t) => (t.id === task.id ? task : t));
+          this.#tasks.set({ tasks: updatedTasks, error: null, isLoading: false });
         },
         error: (err) => {
           console.error('Error updating task:', err);

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TasksStoreAsync } from './tasks-store-async';
+import { TasksStoreSignal } from './tasks-store-signal';
 
-describe('TasksStoreAsync', () => {
-  let service: TasksStoreAsync;
+describe('TasksStoreSignal', () => {
+  let service: TasksStoreSignal;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TasksStoreAsync);
+    service = TestBed.inject(TasksStoreSignal);
   });
 
   it('should be created', () => {

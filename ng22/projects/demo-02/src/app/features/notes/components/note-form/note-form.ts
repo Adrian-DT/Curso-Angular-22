@@ -1,6 +1,6 @@
 import { Component, output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Note } from '../../entities/note';
+import { Note } from '../../model/note';
 
 @Component({
   selector: 'ind-note-form',

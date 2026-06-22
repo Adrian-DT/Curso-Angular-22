@@ -1,6 +1,6 @@
-import { Component, output } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Task } from '../../entities/task';
+import { TasksStoreRx } from '../../services/tasks-store-rx';
 
 @Component({
   selector: 'ind-task-form',
@@ -65,12 +65,19 @@ import { Task } from '../../entities/task';
   `,
 })
 export class TaskForm {
-  protected readonly addEvent = output<Omit<Task, 'id'>>();
+  private taskStore = inject(TasksStoreRx);
+
+  // protected readonly addEvent = output<Omit<Task, 'id'>>();
+
+  // El método submitForm se encarga de manejar el evento de envío del formulario. Recibe como parámetro el objeto NgForm que contiene los datos del formulario y su estado de validación.
   submitForm(ngForm: NgForm) {
     console.log('ngForm', ngForm);
-    if (ngForm.valid) {
-      this.addEvent.emit(ngForm.value);
-      ngForm.resetForm();
-    }
+    // if (ngForm.valid) {
+    //   this.addEvent.emit(ngForm.value);
+    //   ngForm.resetForm();
+    // }
+    // Llamamos al método add del store para añadir una nueva tarea utilizando los datos del formulario.
+    this.taskStore.add(ngForm.value);
+    ngForm.resetForm();
   }
 }

@@ -1,5 +1,5 @@
 import { Component, input, output, signal } from '@angular/core';
-import { Note } from '../../entities/note';
+import { Note } from '../../model/note';
 import { Card } from '../../../../core/components/card/card';
 
 @Component({
@@ -9,9 +9,15 @@ import { Card } from '../../../../core/components/card/card';
     <ind-card>
       <h3>{{ note().title }}</h3>
       <p>Author: {{ note().author }}</p>
-      <label> <input type="checkbox" [checked]="note().isImportant" 
-      [disabled]="!isEdition()" (change)="changeEmit()"
-      /> Important </label>
+      <label>
+        <input
+          type="checkbox"
+          [checked]="note().isImportant"
+          [disabled]="!isEdition()"
+          (change)="changeEmit()"
+        />
+        Important
+      </label>
       <div class="buttons">
         <button (click)="isEdition.set(true)">Edit</button>
         <button (click)="deleteEmit()">Delete</button>
@@ -19,14 +25,14 @@ import { Card } from '../../../../core/components/card/card';
     </ind-card>
   `,
   styles: `
-  ind-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  h3 {
-    margin: 0;
-  }
+    ind-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    h3 {
+      margin: 0;
+    }
   `,
 })
 export class NoteItem {
@@ -41,7 +47,6 @@ export class NoteItem {
   }
 
   changeEmit() {
-
     const updatedNote: Note = {
       ...this.note(),
       isImportant: !this.note().isImportant,
