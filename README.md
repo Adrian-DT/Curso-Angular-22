@@ -5,7 +5,7 @@
 - Modalidad: On-line
 - Fechas/Horario:
   - Días L-15, M-16, X-17, J-18, V-19 y L-22 Junio 2026
-  - Horarios: 
+  - Horarios:
     - Días 15, 16, 17 y 18 Junio en horario 08:30 – 14:30 hs.
     - Días 19 y 22 Junio en horario 9:00 – 14:30 hs.
 
@@ -17,87 +17,87 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ## Temario
 
-- `Introducción a Angular y preparación del entorno `
+- Introducción a Angular y preparación del entorno
   - `¿Qué es Angular y qué resuelve? `
   - `Angular: fundamentos clave`
-  - `Angular vs otros frameworks` 
-  - `Preparar el entorno` 
-  - `Crear el primer proyecto Angular` 
-- `Componentes en profundidad` 
+  - `Angular vs otros frameworks`
+  - `Preparar el entorno`
+  - `Crear el primer proyecto Angular`
+- Componentes en profundidad
   - `Declaración de Componentes y Standalone Components`
-  - `Comunicación entre componentes con @Input y @Output` 
-  - `Ciclo de vida del componente` 
-  - `Estilos: encapsulados y globales` 
-- Templates, directivas y pipes 
-  - `Binding de datos en plantillas` 
+  - `Comunicación entre componentes con @Input y @Output`
+  - `Ciclo de vida del componente`
+  - `Estilos: encapsulados y globales`
+    - Templates, directivas y pipes
+  - `Binding de datos en plantillas`
   - `Directivas estructurales`
-  - `Directivas de atributo` 
-  - `Pipes integrados` 
+  - `Directivas de atributo`
+  - `Pipes integrados`
   - Creación de pipes personalizados
-- Enrutamiento con provideRouter 
-  - `Fundamentos del routing en Angular 20` 
-  - `Configuración de rutas con provideRouter y Route` 
-  - `Navegación entre vistas` 
-  - `Parámetros de ruta y query params` 
+    - Enrutamiento con provideRouter
+  - `Fundamentos del routing en Angular 20`
+  - `Configuración de rutas con provideRouter y Route`
+  - `Navegación entre vistas`
+  - `Parámetros de ruta y query params`
   - `Lazy loading moderno `
-  - Guards básicos 
-  - Caso práctico: aplicación de un restaurante 
-- Servicios e inyección de dependencias
-  - Introducción a los servicios 
-  - Creación e inyección de servicios
-  - Ámbito y ciclo de vida de servicios 
-  - Comunicación HTTP con HttpClient 
-  - Manejo básico de errores en peticiones HTTP 
-  - Interceptors HTTP para manejo global de peticiones y errores 
-  - Lazy services y carga perezosa de servicios 
-- Formularios template-driven 
-  - `Estructura básica de formularios template-driven` 
-  - `Binding y sincronización con ngModel` 
-  - `Validaciones básicas en formularios template-driven` 
-  - Mostrar mensajes de error
-  - Formularios anidados simples 
-- Formularios reactivos 
-  - Introducción a formularios reactivos 
-  - Validaciones reactivas 
-  - Manejo programático de errores 
-  - Validadores personalizados 
-  - Validación de formularios complejos 
-- Signals y estado reactivo 
-  - `Introducción a Signals` 
-  - `API básica de Signals` 
-  - `Estado local reactivo sin necesidad de Observables` 
-  - `Uso de Signals en templates Angular` 
-  - Diferencias entre Signals y RxJS
-  - Integración y coexistencia entre Signals y RxJS
-- Comunicación avanzada y manejo de estado 
-  - Comunicación entre componentes hermanos 
-  - Comparativa: EventEmitter vs Subject 
-  - Patrones de arquitectura recomendados para manejo de estado
-  - Uso básico de BehaviorSubject y Signals compartidos 
-  - Introducción a estado compartido simple sin NgRx 
-  - Conceptos de gestión de estado reactivo a mayor escala (sin librerías externas) 
-- Testing de componentes y servicios 
+  - Guards básicos
+  - Caso práctico: aplicación de un restaurante
+    - Servicios e inyección de dependencias
+  - `Introducción a los servicios`
+  - `Creación e inyección de servicios`
+  - `Ámbito y ciclo de vida de servicios`
+  - `Comunicación HTTP con HttpClient`
+  - `Manejo básico de errores en peticiones HTTP`
+  - Interceptors HTTP para manejo global de peticiones y errores
+  - Lazy services y carga perezosa de servicios
+- Formularios template-driven
+  - `Estructura básica de formularios template-driven`
+  - `Binding y sincronización con ngModel`
+  - `Validaciones básicas en formularios template-driven`
+  - `Mostrar mensajes de error`
+  - Formularios anidados simples
+- Formularios reactivos
+  - `Introducción a formularios reactivos`
+  - `Validaciones reactivas`
+  - `Manejo programático de errores`
+  - Validadores personalizados
+  - Validación de formularios complejos
+    - Signals y estado reactivo
+  - `Introducción a Signals`
+  - `API básica de Signals`
+  - `Estado local reactivo sin necesidad de Observables`
+  - `Uso de Signals en templates Angular`
+  - `Diferencias entre Signals y RxJS`
+  - `Integración y coexistencia entre Signals y RxJS`
+    - Comunicación avanzada y manejo de estado
+  - Comunicación entre componentes hermanos
+  - Comparativa: EventEmitter vs Subject
+  - `Patrones de arquitectura recomendados para manejo de estado`
+  - `Uso básico de BehaviorSubject y Signals compartidos`
+  - `Introducción a estado compartido simple sin NgRx`
+  - Conceptos de gestión de estado reactivo a mayor escala (sin librerías externas)
+    - Testing de componentes y servicios
   - `Importancia de testear en Angular`
-  - `Configuración del entorno de testing` 
-  - `Pruebas de componentes` 
-  - Pruebas de servicios 
-  - Pruebas de formularios 
-  - `Introducción a pruebas end-to-end (E2E) con Cypress o Playwright` 
-- Arquitectura escalable y buenas prácticas 
-  - `Organización por features (Feature Folders)` 
-  - `Reutilización de componentes y servicios` 
+  - `Configuración del entorno de testing`
+  - `Pruebas de componentes`
+  - Pruebas de servicios
+  - Pruebas de formularios
+  - `Introducción a pruebas end-to-end (E2E) con Cypress o Playwright`
+- Arquitectura escalable y buenas prácticas
+  - `Organización por features (Feature Folders)`
+  - `Reutilización de componentes y servicios`
   - `Nomenclatura, rutas y estructura limpia`
-  - Introducción a NgModules 
+  - Introducción a NgModules
   - Migración y coexistencia entre NgModules y Standalone Components
   - Migración y coexistencia entre NgModules y Standalone Components
-  - Monorepos y herramientas para proyectos grandes (Nx) 
-  - Buenas prácticas de seguridad en Angular 
-- Despliegue y optimización para producción 
-  - Variables de entorno 
-  - Comandos de build para producción 
-  - Técnicas de lazy loading para mejorar performance 
-  - Opciones populares para despliegue 
-  - Análisis de bundles y optimización avanzada (tree shaking, preloading) 
+  - Monorepos y herramientas para proyectos grandes (Nx)
+  - Buenas prácticas de seguridad en Angular
+- Despliegue y optimización para producción
+  - `Variables de entorno`
+  - Comandos de build para producción
+  - Técnicas de lazy loading para mejorar performance
+  - Opciones populares para despliegue
+  - Análisis de bundles y optimización avanzada (tree shaking, preloading)
   - Monitorización post-despliegue y feedback de usuarios
 
 ## Desarrollo del curso
@@ -106,7 +106,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - Introducción a Angular y su ecosistema.
 
-- Entornos de desarrollo para Angular: 
+- Entornos de desarrollo para Angular:
   - Node: nvm (Node Version Manager)
   - Visual Studio Code
     - Extensiones recomendadas
@@ -118,7 +118,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 [descanso]: 11:10 - 11:40
 
 - Workspace y proyectos en Angular (2).
-
   - Añadiendo ESLint (`ng add`) y Prettier.
   - Estructura de un workspace/proyecto Angular.
 
@@ -126,16 +125,15 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Servidor de desarrollo: `ng serve`.
   - Testing con Vitest: `ng test`.
   - Testing con Playwright: `ng e2e`.
-    - Problemas de versiones. Actualización con Version Lens 
+    - Problemas de versiones. Actualización con Version Lens
   - Construcción del proyecto: `ng build`.
   - Despliegue: `ng deploy`. Opciones
 - Generación de componentes: `ng generate`.
-  - Elementos de un componente: HTML, CSS, TypeScript. 
+  - Elementos de un componente: HTML, CSS, TypeScript.
   - Template y estilos inline o en ficheros.
   - Guía de estilos actualizada
-  - Scaffolding 
+  - Scaffolding
   - Estilos globales: variables, reset...
- 
 
 - Elementos básicos de TypeScript.
   - Tipos de datos. Inferencia y anotación de tipos.
@@ -150,22 +148,22 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Import y Export.
     - Módulos por defecto y nombrados.
 
-### Día 2 (M-16): Componentes del Layout. Testing. 
+### Día 2 (M-16): Componentes del Layout. Testing.
 
- - Generación de componentes: `ng generate component <nombre>`.
-    - Componente 🧿Sample
-      - Programación declarativa en el template: 
-        - Del componente a la vista: interpolación {{}}, binding de propiedades []
-        - De la vista al componente: binding de eventos ()
-      - Signals en el estado del componente y en la plantilla.
-      - Signals y asincronía. Zoneless + Estrategia OnPush
-  
-      <!-- 
-      - Estado en los componentes con ZoneJS v. Zoneless
-        - Detección del cambio: Zone v. Zoneless
-        - Detección del cambio: Estrategia OnPush
-      -->
-  
+- Generación de componentes: `ng generate component <nombre>`.
+  - Componente 🧿Sample
+    - Programación declarativa en el template:
+      - Del componente a la vista: interpolación {{}}, binding de propiedades []
+      - De la vista al componente: binding de eventos ()
+    - Signals en el estado del componente y en la plantilla.
+    - Signals y asincronía. Zoneless + Estrategia OnPush
+
+    <!--
+    - Estado en los componentes con ZoneJS v. Zoneless
+      - Detección del cambio: Zone v. Zoneless
+      - Detección del cambio: Estrategia OnPush
+    -->
+
 - Testing de componentes. Pruebas unitarias
   - Test con Vitest. Conceptos básicos y ejemplo
   - Elementos de los test en Angular: TestBed, fixture, detectChanges()
@@ -176,17 +174,16 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Procesos asíncronos. Timers
 
 - [Descanso]: 11:00 - 11:30
- 
+
 - Estilos: Encapsulación de estilos. ViewEncapsulation.
- 
+
 - Scaffolding. Core
   - Componente 🧿Header. Estructura básica en CSS: Grid
   - Componente 🧿Footer
   - Componente 🧿Card. Proyección de contenido
   - Uso en el componente 🧿App como contenedor principal.
   - Test de Header, Footer y Card
-  
-- Componentes de navegación  
+- Componentes de navegación
   - 🧿Menu. Tipo y datos. Iteración con @for
   - 🧿MenuMobile. Svg como parte del template
   - Incorporación en App: RWD basado en CSS y media queries
@@ -201,12 +198,11 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Signal queries: viewChild, focus()
   - Ciclo de vida de los componentes
 
-
 ### Día 3 (X-17). Paginas. Componentes activos. Comunicaciones
 
 - Referencias locales (continuación)
-  - Effects (primitiva de signal) 
-  - Componente 🧿SearchRef. Referencias locales en el template.  
+  - Effects (primitiva de signal)
+  - Componente 🧿SearchRef. Referencias locales en el template.
 
 - Testing de todos los componentes
   - Test de Search. Renderizado y data binding.
@@ -217,7 +213,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - Componente 🧿user. Nuevo ejemplo de CSS
 - Componente 🧿toggle: Widget css como componente Angular
-- Test de Toggle. Spies & Mocks. 
+- Test de Toggle. Spies & Mocks.
 
 - Scaffolding. Features
   - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿About (Angular).
@@ -233,23 +229,22 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - Testing de todos los componentes
   - Test de Counter. Eventos. Errores al testear implementación
 
-<!-- 
+<!--
   - Test de las páginas
 -->
 
 - Comunicación entre componentes
-
   - Input. Decoradores @Input. función input(). Drilling
   - Output. Decorador @Output. EventEmitter. Función output(). Eventos del contador
   - 🧿CounterList. Agrupando contadores. Estado en el componente padre
-  - Contadores. Eventos con valor. 
+  - Contadores. Eventos con valor.
 
 ### Día 4 (J-18). Rutas. Arquitectura de componentes. Formularios TD
 
 - Comunicación entre componentes (continuación)
   - Input en los contadores. Revision de los totales
-  - Computed signals 
-  - Test de inputs y outputs. 
+  - Computed signals
+  - Test de inputs y outputs.
 
 - Signal model()
   - Componente 🧿Check. Input y Output. Design System CheckBox
@@ -273,7 +268,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Directivas de atributo: Stick
   - Directivas estructurales: introducción
 
-### Día 5 (V-19).  Servicios. Providers e injectors. Formularios DD
+### Día 5 (V-19). Servicios. Providers e injectors. Formularios DD
 
 - Directivas estructurales: ejemplo
 
@@ -281,44 +276,42 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Componentes de contenedores vs de presentación.
   - Componentes inteligentes vs tontos.
 
-
 - Ejemplo: Notes List
   - Entidad Notes. Modelo y mock de datos asíncrono.
   - Componente Notes-List. Lógica del estado
   - Componente Notes-Item. Input y Output (Eventos)
-  - Componente Notes-Form. Output (Eventos) 
+  - Componente Notes-Form. Output (Eventos)
     - Forms Template Driven (TD)
       - NgForm implícito, NgModel. Referencias locales
       - Paso de ngForm al onSubmit: form.value; form.reset()
 
 - [Descanso] 11:00 - 11:30
 
-<!-- Dia 4 en versión anterior - Antes del descanso
-
-- Signal Forms
+- Componente Notes-Form. Validaciones
 
 - Introducción a los servicios en Angular.
 - Servicios y Providers. DI (Dependency Injection)
   - Provider root v. provider en un componente / ruta
   - Ejemplo con un servicio simple: Time
   - Injector jerárquico. Servicios singleton y no singleton.
- -->
 
-<!-- 
 - Servicios y patrón Repository
   - Mock de datos. Interface de los repositorios
   - Uso de promesas y observables (RxJS) en los servicios.
-  - Servicio LocalNotesRepository: Repositorio y persistencia local (localStorage).
-  - Uso en los componentes. Inyección de dependencias.
-  - Repositorio y lógica de negocio (estado). Estrategias 
+  - Servicio TasksStore: Repositorio in-memory.
+  - Repositorio y lógica de negocio (estado). Estrategias
   - Métodos CRUD. getAll() y getById()
   - Métodos CRUD. add(), update(), delete()
+  - Uso en los componentes. Inyección de dependencias.
+
+<!--
+  - Servicio LocalNotesRepository: Repositorio y persistencia local (localStorage).
+ -->
 
 - RxJS (Observables)
   - Introducción. Observables, subscription, operadores.
-  - Los mismos repositorios usando RxJS (Observables). 
+  - Los mismos repositorios usando RxJS (Observables).
   - Uso del repo en el componente
- -->
 
   <!-- - Testing de servicios.
     - Tests del servicio
@@ -326,41 +319,36 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
       - Test de promesas (async, whenStable, expectAsync).
     - Testing de componentes con servicios (mocks y spies). -->
 
-<!-- 
-- Formularios reactivos (DD). RegisterForm
+- Formularios reactivos (DD). LoginForm
   - FormGroup, FormControl, FormBuilder
-  - Binding desde el template 
- -->
-
+  - Binding desde el template
 
 ### Día 6 (L-22). Servicios HTTP. Arquitectura ¿despliegue?
 
-<!-- Dia 5 en versión anterior -->
-
-<!-- 
 - Formularios reactivos (continuación).
-
-  - RegisterForm. Otros controles HTML
   - Validaciones síncronas (y asíncronas).
-    - Mensajes de validación 
--->
+    - Mensajes de validación
+
+- Signal Forms.
+  - RegisterForm. Otros controles HTML
 
 <!-- - Testing de formularios reactivos. -->
 
-<!-- 
 - Introducción a los servicios HTTP en Angular.
+
+<!--
 
 - API server fake basado en JSONServer.
   - Prueba con Postman
 
-- Instalación y uso de environments. 
+- Instalación y uso de environments.
   - Configuración de la URL base del API.
 
 - Servicio HttpClientModule. Observables (RxJs).
 
   - Creación de un ApiRepositoryService.
   - Antes de Angular 21: Configuración del servicio HTTP: provider
-  - Uso desde el componente (NoteList).  
+  - Uso desde el componente (NoteList).
  -->
 
 <!--
@@ -370,8 +358,8 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 -->
 
 - [Descanso] 11:00 - 11:30
- 
-<!-- 
+
+<!--
 - Servicios stateful: patrón Flux
 
 - Nuevo proyecto (demo-02). Feature Notes
@@ -380,10 +368,10 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Estado privado con BehaviorSubject
     - Estado público con Observable (asObservable)
     - Métodos para modificar el estado (add, toggle, remove)
-  
-  
+
+
   - Estado con Signals: signal (WriteableSignal) y readOnly/computed (Signal)
-  
+
   - Servicio Store con NotesState
     - Estado privado con WriteableSignal
     - Estado público con Signal (asReadOnly)
@@ -391,7 +379,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - Uso del estado desde los componentes ToDo...
 - Gestión de errores
-- Uso desde cualquier parte de la aplicación (Header) 
+- Uso desde cualquier parte de la aplicación (Header)
 
 - Más novedades (Signals)
   - resources: httResource (Angular 22)
@@ -400,10 +388,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 - Interceptors y Guards
 - Testing
 
- <!-- 
+ <!--
  - 🧿Modal y menu mobile: Inputs + Outputs. Comunicación indirecta entre componentes
   (Podría ir después de rutas)
  -->
 
-
- -->
+-->
